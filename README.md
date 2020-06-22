@@ -30,5 +30,5 @@
     - [ ] Views
     - [ ] Url's
     - [ ] Templates
-- [ ] Frontend
+- [ ] Front end
 - [ ] Deploy
