@@ -2,7 +2,7 @@
 
 ***This is an ecommerce website built with Django. Website about hookah shop and accessories***
 ## **Project Status**
-***Project not completed at audit date***
+***In process***
 
 
 # **Built With** #
