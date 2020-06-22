@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="search-label-icon">
+    <h3 class="sear-head">Пошук</h3>
+    <form action="{% url 'search_coal' %}" method="get">
+        <input type="search" name="q">
+        <button type="submit">
+            <span class="fa fa-search"></span>
+        </button>
+    </form>
+</div>
+<a href="{% url 'index' %}">home</a>
+{% for coal in coal_list %}
+    <a href="{{ coal.get_absolute_url }}">{{ coal.name }}</a>
+    <img src="{{ coal.poster.url }}" alt="">
+{% endfor %}
+</body>
+</html>

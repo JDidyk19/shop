@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="search-label-icon">
+    <h3 class="sear-head">Пошук</h3>
+    <form action="{% url 'search_hookah' %}" method="get">
+        <input type="search" name="q">
+        <button type="submit">
+            <span class="fa fa-search"></span>
+        </button>
+    </form>
+</div>
+<a href="{% url 'index' %}">home</a>
+<form action="{% url 'hookah' %}" method="get">
+    <button type="submit">
+        All
+    </button>
+</form>
+<form action="{% url 'filter_hookah' %}" method="get">
+    {% for brand_hookah in view.get_brand_hookah %}
+        <button type="submit" name="brand" value="{{ brand_hookah.id}}">
+        {{ brand_hookah.name }}
+        </button>
+{% endfor %}
+</form>
+{% for hookah in hookah_list %}
+    <a href="{{ hookah.get_absolute_url }}">{{ hookah.brand }} {{ hookah.name }}</a>
+    <img src="{{ hookah.poster.url }}" alt="">
+{% endfor %}
+
+</body>
+</html>
